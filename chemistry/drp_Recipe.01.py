@@ -67,7 +67,7 @@ cc_density = random.randrange(150, 200, 1)/100
 
 substance_table = {"chili powder": cp_density, "cream cheese": cc_density}
 
-substance, density = choice(list(substance_table.items()))  # Change this to random.choice
+substance, density = random.choice(list(substance_table.items()))  # Change this to random.choice
 
 question = "A recipe calls for exactly " + str(10 * tbs_per_serving) + " tablespoons of " + substance + " \
 per 10 servings.  Assume there are exactly 16 tablespoons of " + substance + " in a cup \
