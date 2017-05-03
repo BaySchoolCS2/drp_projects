@@ -8,8 +8,8 @@
 # question.  If you have to enter an actual html link, here's the tag format:
 # <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
 
-from math import *
-from random import *
+import math
+import random
 
 def dec(var):
   if var < 10:
@@ -24,9 +24,9 @@ def sci(var):
   
 def acceptable_answers(x):
  dig = 6 # did not investigate effects of changing DIG
- signif = round(pow(10, round(log(x, 10), dig) % 1), dig)
+ signif = round(pow(10, round(math.log(x, 10), dig) % 1), dig)
 
- power_term = log(x, 10)//1
+ power_term = math.log(x, 10)//1
 
  if signif < 1.010:
   min_signif = signif - 0.006
@@ -60,17 +60,17 @@ max_submissions = 3
 help_submissions = 2
 
 cups_per_tbs = 1/16
-servings = randrange(200, 800, 100) * 10  #/10
-tbs_per_serving = randrange(1, 4, 1)  #/10   
-cp_density = randrange(150, 200, 1)/1000
-cc_density = randrange(150, 200, 1)/100
+servings = random.randrange(200, 800, 100) * 10  #/10
+tbs_per_serving = random.randrange(1, 4, 1)  #/10   
+cp_density = random.randrange(150, 200, 1)/1000
+cc_density = random.randrange(150, 200, 1)/100
 
 substance_table = [\
 ["chili powder", cp_density],\
 ["cream cheese", cc_density],\
 ]
 
-i = randrange(0,1,1)   # testing
+i = random.randrange(0,1,1)   # testing
 substance = substance_table[i][0]
 density   = substance_table[i][1]
 
