@@ -14,7 +14,7 @@ import random
 def generate_acceptable_answers(correct_answer):
     """ Calculates acceptable answers (answers accurate to e+1)
     Args:
-         correct_answer (int)
+         correct_answer (float)
 
     Returns:
          list of len 3
@@ -47,7 +47,7 @@ def generate_acceptable_answers(correct_answer):
 def convert_to_scientific_notation(number):
     """ Converts a number to scientific notation
     Args:
-         number (int)
+         number (float)
 
     Returns:
          string
