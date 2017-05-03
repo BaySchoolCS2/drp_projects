@@ -111,15 +111,14 @@ provided_answer = "The procedure calls for " + \
                   acceptable_answers[1] + " and " + \
                   acceptable_answers[2] + "."
 
-#### Should stay unchanged ####################################
-#
+# ____________________________Should stay unchanged____________________________
+
 submission = 1
 wrong = True
 print(answer)
 # print(acceptable_answers(answer))
 # print(provided_answer)
 
-# TODO reject 5.7e2
 
 print(question)
 while wrong and submission <= max_submissions:
