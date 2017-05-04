@@ -20,13 +20,13 @@ def generate_acceptable_answers(correct_answer):
          list of len 3
 
     Example:
-    >>> acceptable_answers(5)
+    >>> generate_acceptable_answers(5)
     ['4.99e0', '5.00e0', '5.01e0']
-    >>> acceptable_answers(50)
+    >>> generate_acceptable_answers(50)
     ['4.99e1', '5.00e1', '5.01e1']
-    >>> acceptable_answers(1001)
+    >>> generate_acceptable_answers(1001)
     ['9.90e2', '1.00e3', '1.01e3']
-    >>> acceptable_answers(0.03)
+    >>> generate_acceptable_answers(0.03)
     ['2.99e-2', '3.00e-2', '3.01e-2']
     """
     correct_answer = convert_to_scientific_notation(correct_answer)
