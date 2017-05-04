@@ -25,7 +25,7 @@ def generate_acceptable_answers(correct_answer):
     >>> acceptable_answers(50)
     ['4.99e1', '5.00e1', '5.01e1']
     >>> acceptable_answers(1001)
-    ['0.99e3', '1.00e3', '1.01e3']
+    ['9.90e2', '1.00e3', '1.01e3']
     >>> acceptable_answers(0.03)
     ['2.99e-2', '3.00e-2', '3.01e-2']
     """
