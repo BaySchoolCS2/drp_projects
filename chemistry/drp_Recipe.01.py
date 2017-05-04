@@ -78,6 +78,7 @@ def convert_to_scientific_notation(number):
     else:
         return number + "-" + exponent
 
+
 def is_acceptable_answer(acceptable_answers, response):
     """ Determines if an answer is within the range of acceptable answers
     Args:
@@ -88,23 +89,25 @@ def is_acceptable_answer(acceptable_answers, response):
         bool: True of the answer is acceptable, false otherwise
 
     """
+    response = float(response)
     min_value = float(acceptable_answers[0])
     max_value = float(acceptable_answers[-1])
 
-    if min_value < float(response) < max_value:
+    if min_value <= float(response) <= max_value:
         return True
-    
+
     return False
 
-def is_hyper_scientific(response):
+
+def is_hyper_scientific(number):
     """ Determines if an answer is hyper-scientific
     Args:
-        response (String)
+        number (String)
     Returns:
         bool: True if is hyper-scientific, False otherwise
 
     """
-    if convert_to_scientific(float(response)) == response:
+    if convert_to_scientific_notation(float(number)) == number:
         return True
     return False
 
@@ -131,6 +134,9 @@ digits. For example: 1.23e+4, 4.56e+0 or 7.89e-12. Don't include units.\n\n"
 
 answer = servings * tbs_per_serving * cups_per_tbs * density
 
+# TODO remove test
+answer = 100
+
 acceptable_answers = generate_acceptable_answers(answer)
 
 provided_answer = "The procedure calls for " + \
@@ -153,8 +159,7 @@ print(answer)
 print(question)
 while wrong and submission <= max_submissions:
     response = input("Your answer is: ")
-    if response == is_acceptable_answer(acceptable_answers, response) and
-    is_hyper_scientific(response):
+    if is_acceptable_answer(acceptable_answers, response) and is_hyper_scientific(response):
         wrong = False
         print("Your answer is correct (or close enough).")
     elif submission == 1:
