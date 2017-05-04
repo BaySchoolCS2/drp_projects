@@ -50,17 +50,17 @@ def convert_to_scientific_notation(number):
          number (float)
 
     Returns:
-         string
+         String
 
     Example:
     >>> convert_to_scientific_notation(5)
-    5.00e0
+    '5.00e0'
     >>> convert_to_scientific_notation(10)
-    1.00e1
+    '1.00e1'
     >>> convert_to_scientific_notation(-100)
-    -1.00e2
+    '-1.00e2'
     >>> convert_to_scientific_notation(0.01)
-    1.00e-2
+    '1.00e-2'
     """
 
     number = "%.2e" % number
@@ -105,7 +105,13 @@ def is_hyper_scientific(number):
         number (String)
     Returns:
         bool: True if is hyper-scientific, False otherwise
-
+    Example:
+    >>> is_hyper_scientific("1.00e2")
+    True
+    >>> is_hyper_scientific("100")
+    False
+    >>> is_hyper_scientific("1.234e5")
+    False
     """
     if convert_to_scientific_notation(float(number)) == number:
         return True
