@@ -99,18 +99,18 @@ def is_acceptable_answer(acceptable_answers, response):
     return False
 
 
-def is_hyper_scientific(number):
-    """ Determines if an answer is hyper-scientific
+def is_scientific(number):
+    """ Determines if an answer is in scientific notation
     Args:
         number (String)
     Returns:
-        bool: True if is hyper-scientific, False otherwise
+        bool: True if is in scientific notation, False otherwise
     Example:
-    >>> is_hyper_scientific("1.00e2")
+    >>> is_scientific("1.00e2")
     True
-    >>> is_hyper_scientific("100")
+    >>> is_scientific("100")
     False
-    >>> is_hyper_scientific("1.234e5")
+    >>> is_scientific("1.234e5")
     False
     """
     if convert_to_scientific_notation(float(number)) == number:
@@ -135,8 +135,8 @@ question = "A recipe calls for exactly " + str(10 * tbs_per_serving) + " tablesp
 per 10 servings.  Assume there are exactly 16 tablespoons of " + substance + " in a cup \
 and that the density of " + substance + " is about " + str(density) + " pounds per cup.\n\n\
 How many pounds of chili pepper do you need to feed one serving to each of " + str(servings) + " people?\n\n\
-Express your answer in 'hyper-scientific' notation to three significant \
-digits. For example: 1.23e+4, 4.56e+0 or 7.89e-12. Don't include units.\n\n"
+Express your answer in scientific notation to three significant \
+digits. Don't include units.\n\n"
 
 answer = servings * tbs_per_serving * cups_per_tbs * density
 
@@ -144,6 +144,7 @@ answer = servings * tbs_per_serving * cups_per_tbs * density
 answer = 100
 
 acceptable_answers = generate_acceptable_answers(answer)
+
 
 provided_answer = "The procedure calls for " + \
                   convert_to_scientific_notation(answer) + " pounds of " + \
@@ -165,7 +166,7 @@ print(provided_answer)
 print(question)
 while wrong and submission <= max_submissions:
     response = input("Your answer is: ")
-    if is_acceptable_answer(acceptable_answers, response) and is_hyper_scientific(response):
+    if is_acceptable_answer(acceptable_answers, response) and is_scientific(response):
         wrong = False
         print("Your answer is correct (or close enough).")
     elif submission == 1:
