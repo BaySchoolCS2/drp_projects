@@ -65,15 +65,15 @@ def convert_to_scientific_notation(number):
 
     number = "%.2e" % number
     if "+" in number:
-        positive = True
+        positive_exponent = True
         number, exponent = number.split("+")
     else:
-        positive = False
+        positive_exponent = False
         number, exponent = number.split("-")
 
     exponent = str(int(exponent))  # Removes leading zeros
 
-    if positive:
+    if positive_exponent:
         return number + exponent
     else:
         return number + "-" + exponent
@@ -158,8 +158,8 @@ provided_answer = "The procedure calls for " + \
 submission = 1
 wrong = True
 print(answer)
-# print(acceptable_answers(answer))
-# print(provided_answer)
+print(acceptable_answers)
+print(provided_answer)
 
 
 print(question)
