@@ -149,9 +149,9 @@ acceptable_answers = generate_acceptable_answers(answer)
 provided_answer = "The procedure calls for " + \
                   convert_to_scientific_notation(answer) + " pounds of " + \
                   substance + "." + \
-                  "\nAcceptable numerical answers are " + \
-                  acceptable_answers[0] + ", " + \
-                  acceptable_answers[1] + " and " + \
+                  "\nAcceptable numerical answers are between the range of " + \
+                  acceptable_answers[0] + \
+                  " and " + \
                   acceptable_answers[2] + "."
 
 # ____________________________Should stay unchanged____________________________
