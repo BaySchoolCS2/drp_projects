@@ -134,7 +134,7 @@ substance, density = random.choice(list(substance_table.items()))  # Change this
 question = "A recipe calls for exactly " + str(10 * tbs_per_serving) + " tablespoons of " + substance + " \
 per 10 servings.  Assume there are exactly 16 tablespoons of " + substance + " in a cup \
 and that the density of " + substance + " is about " + str(density) + " pounds per cup.\n\n\
-How many pounds of chili pepper do you need to feed one serving to each of " + str(servings) + " people?\n\n\
+How many pounds of " + substance + " do you need to feed one serving to each of " + str(servings) + " people?\n\n\
 Express your answer in scientific notation to three significant \
 digits. Don't include units.\n\n"
 
